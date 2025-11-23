@@ -8,18 +8,18 @@
     <style>
         /* Cores do WhatsApp */
         :root {
-            --whatsapp-bg: #ECE5DD; /* Fundo principal */
-            --whatsapp-header: #075E54; /* Cor primária escura */
-            --whatsapp-user-bubble: #DCF8C6; /* Balão do usuário (verde claro) */
-            --whatsapp-bot-bubble: #FFFFFF; /* Balão do bot (branco) */
-            --whatsapp-icon: #128C7E; /* Cor de ícones/links */
-            --whatsapp-send-btn: #25D366; /* Verde de enviar */
+            --whatsapp-bg: #ECE5DD;
+            --whatsapp-header: #075E54;
+            --whatsapp-user-bubble: #DCF8C6;
+            --whatsapp-bot-bubble: #FFFFFF;
+            --whatsapp-icon: #128C7E;
+            --whatsapp-send-btn: #25D366;
         }
 
         /* Base e Responsividade */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f2f5; /* Fundo fora da janela do chat */
+            background-color: #f0f2f5;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -29,7 +29,7 @@
 
         .chatbot-container {
             width: 100%;
-            max-width: 450px; /* Limite para telas maiores */
+            max-width: 450px;
             height: 90vh;
             max-height: 700px;
             display: flex;
@@ -126,7 +126,7 @@
             cursor: pointer;
             font-size: 1.2em;
             font-weight: bold;
-            flex-shrink: 0; /* Impede o encolhimento */
+            flex-shrink: 0;
         }
 
         #clear-btn {
@@ -153,7 +153,7 @@
         .modal {
             display: none;
             position: fixed;
-            z-index: 1000; /* Garante que fique acima de tudo */
+            z-index: 1000;
             left: 0;
             top: 0;
             width: 100%;
@@ -237,7 +237,8 @@
             "Deveres dos Usuários": "Artigo 3º: É dever de todos os USUÁRIOS prestigiar e acatar as deliberações da Assembleia Geral, Ordinária e Extraordinária.",
             "Cópia do Regulamento em Contratos": "Artigo 4º: Uma cópia do Regulamento Interno deverá obrigatoriamente fazer parte integrante dos contratos de locação, comodatos ou vendas de unidades autônomas.",
             "Respeito a Colaboradores": "Artigo 6º: Todos os USUÁRIOS têm o dever de tratar com respeito todos os colaboradores, prestadores de serviços do Residencial.",
-
+            "Responsabilidade por Danos": "Artigo 7º: O USUÁRIO será o único responsável pelos danos causados por seus dependentes, empregados ou visitantes às áreas comuns ou a terceiros.",
+            
             // ENTRADA, SAÍDA E SEGURANÇA
             "Controle de Entrada e Saída": "Artigo 9º e 10º: Os portões permanecem fechados sob controle da Portaria. A entrada de veículos ou pessoas depende de cadastro, documentos e da comprobatória de sua condição (propriedade, locação, etc.).",
             "Uso de Crachá/Cartão de Acesso": "Artigo 40º: É obrigatório o uso do crachá/cartão para automóvel, com identificação da 'Residencial Belize', que deverá ser afixado no para-brisa.",
@@ -300,21 +301,17 @@
                 shareBtn.textContent = '🔗 Compartilhar Resposta';
                 shareBtn.className = 'share-btn';
                 shareBtn.onclick = () => {
-                    // O texto para compartilhamento é limpo e formatado.
                     const fullText = `Resposta do ChatBelize sobre o Regulamento: \n\n${textToShare.trim()}`; 
                     
                     if (navigator.share) {
-                        // Usa a API Web Share se disponível (melhor para celulares)
                         navigator.share({
                             title: 'ChatBelize - Regulamento Interno',
                             text: fullText,
                         }).catch((error) => console.error('Erro ao compartilhar', error));
                     } else {
-                        // Alternativa para desktop: copia para a área de transferência
                         navigator.clipboard.writeText(fullText).then(() => {
                             alert('Resposta copiada para a área de transferência!');
                         }).catch(err => {
-                            // Último recurso: exibe o texto para cópia manual
                             alert('Seu navegador não suporta cópia automática. Copie o texto:\n\n' + fullText);
                         });
                     }
@@ -325,15 +322,19 @@
             function generateResponse(query) {
                 let response = "Desculpe, não encontrei informações específicas sobre isso no regulamento. Tente usar o botão '📑 Tópicos' ou reformular sua pergunta com palavras-chave.";
                 
+                // Normalização da busca (convertendo a consulta do usuário para minúsculas)
+                const normalizedQuery = query.toLowerCase().trim();
+
                 // 1. Busca por Tópico exato
                 if (regulamentoData[query]) {
                     response = regulamentoData[query];
                 } else {
-                    // 2. Busca por palavra-chave (simples)
-                    const normalizedQuery = query.toLowerCase();
+                    // 2. Busca por palavra-chave: pesquisa no TÓPICO (Chave) E no CONTEÚDO (Valor)
                     for (const topic in regulamentoData) {
-                        // Verifica se a palavra-chave está no título do tópico
-                        if (topic.toLowerCase().includes(normalizedQuery)) {
+                        const topicContent = regulamentoData[topic].toLowerCase();
+                        
+                        // Verifica se a palavra-chave está no Título do Tópico OU no Conteúdo do Artigo
+                        if (topic.toLowerCase().includes(normalizedQuery) || topicContent.includes(normalizedQuery)) {
                             response = regulamentoData[topic];
                             break;
                         }
