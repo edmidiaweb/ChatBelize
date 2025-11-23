@@ -45,8 +45,6 @@ const regulamentoData = {
     "Alteração do Regulamento": "Artigo 70º: Este Regulamento Interno somente poderá ser alterado através de Assembleia Geral."
 };
 
-// Arquivo: script.js (Continuação da Lógica)
-
 document.addEventListener('DOMContentLoaded', () => {
     const chatBody = document.getElementById('chat-body');
     const userInput = document.getElementById('user-input');
@@ -56,8 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const topicModal = document.getElementById('topic-modal');
     const topicList = document.getElementById('topic-list');
     const closeModalBtn = topicModal.querySelector('.close-btn');
-
-    // O objeto 'regulamentoData' completo deve estar aqui
 
     function addMessage(text, sender) {
         const messageDiv = document.createElement('div');
@@ -73,7 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
         shareBtn.textContent = '🔗 Compartilhar Resposta';
         shareBtn.className = 'share-btn';
         shareBtn.onclick = () => {
-            const fullText = `Resposta do ChatBelize sobre o Regulamento: \n\n${textToShare.replace(/\/g, '').trim()}`; // Remove citações para o compartilhamento
+            // CORREÇÃO APLICADA AQUI: O .replace() com erro de sintaxe foi removido,
+            // pois os dados fornecidos não contêm mais as citações, tornando-o desnecessário.
+            const fullText = `Resposta do ChatBelize sobre o Regulamento: \n\n${textToShare.trim()}`; 
+            
             if (navigator.share) {
                 navigator.share({
                     title: 'ChatBelize - Regulamento Interno',
@@ -100,7 +99,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // 2. Busca por palavra-chave (simples)
             const normalizedQuery = query.toLowerCase();
             for (const topic in regulamentoData) {
-                if (topic.toLowerCase().includes(normalizedQuery)) {
+                // Se a palavra-chave estiver no tópico ou na resposta (para casos mais complexos)
+                if (topic.toLowerCase().includes(normalizedQuery) || regulamentoData[topic].toLowerCase().includes(normalizedQuery)) {
                     response = regulamentoData[topic];
                     break;
                 }
@@ -134,6 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     topicBtn.addEventListener('click', () => {
         topicList.innerHTML = '';
+        // Cria e popula os botões de tópico
         for (const topic in regulamentoData) {
             const topicButton = document.createElement('button');
             topicButton.textContent = `➡️ ${topic}`;
