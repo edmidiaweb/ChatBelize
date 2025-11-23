@@ -252,8 +252,7 @@
             <h3>💬 ChatBelize - Regulamento Interno</h3>
         </div>
         <div class="chat-body" id="chat-body">
-            <div class="message bot-message">Olá! Sou o ChatBelize. Em que posso ajudar você com o Regulamento Interno? Escolha um tópico ou digite sua pergunta.</div>
-        </div>
+            </div>
         <div class="chat-footer">
             <div class="topic-button-area">
                 <button id="topic-btn" title="Tópicos Principais">📑 Tópicos</button>
@@ -326,11 +325,14 @@
             const chatBody = document.getElementById('chat-body');
             const userInput = document.getElementById('user-input');
             const sendBtn = document.getElementById('send-btn');
-            const clearBtn = document.getElementById('clear-btn');
+            const clearBtn = document.getElementById('clear-btn'); // Verificado
             const topicBtn = document.getElementById('topic-btn');
             const topicModal = document.getElementById('topic-modal');
             const topicList = document.getElementById('topic-list');
             const closeModalBtn = topicModal.querySelector('.close-btn');
+
+            // Adiciona a mensagem inicial quando o DOM estiver carregado
+            addMessage("Olá! Sou o ChatBelize. Em que posso ajudar você com o Regulamento Interno? Escolha um tópico ou digite sua pergunta.", 'bot');
 
             function addMessage(text, sender) {
                 const messageDiv = document.createElement('div');
@@ -357,7 +359,8 @@
                 shareBtn.className = 'share-btn';
                 shareBtn.onclick = () => {
                     // Limpa o texto para compartilhamento, removendo a mensagem de contato final
-                    const cleanText = textToShare.split('<br><br>')[0].trim();
+                    // Busca a parte do texto antes da tag <span> de contato
+                    const cleanText = textToShare.split('<span class="admin-contact">')[0].trim();
                     const fullText = `Resposta do ChatBelize sobre o Regulamento: \n\n${cleanText}`; 
                     
                     if (navigator.share) {
@@ -405,7 +408,7 @@
                         }
                     }
                     
-                    // NOVO: Adicionar mensagem final de contato
+                    // OBRIGATÓRIO: Adicionar mensagem final de contato
                     const closingMessage = '<span class="admin-contact">Para maiores informações entre em contato com a administração</span>';
                     response += closingMessage;
 
@@ -438,7 +441,7 @@
             clearBtn.addEventListener('click', () => {
                 // Limpa todo o conteúdo do chat
                 chatBody.innerHTML = ''; 
-                // Adiciona a mensagem inicial
+                // Adiciona a mensagem inicial (garante que a função está no escopo)
                 addMessage("Olá! Sou o ChatBelize. Em que posso ajudar você com o Regulamento Interno? Escolha um tópico ou digite sua pergunta.", 'bot');
                 // Limpa o input e foca nele
                 userInput.value = '';
