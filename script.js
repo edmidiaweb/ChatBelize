@@ -8,11 +8,13 @@ const regulamentoData = {
 
     // ACESSO E SEGURANÇA
     "Controle de Acesso (Geral)": "Os portões permanecem fechados sob controle da Portaria. A entrada de veículos ou pessoas depende de cadastro e comprovação de sua condição (Art. 9º e 10º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
-    "Uso de Crachá/Cartão e Controle Remoto": "É obrigatório o uso do crachá/cartão afixado no para-brisa. O controle remoto **não** deve ser fornecido a prestadores de serviços para burlar restrições de horários (Art. 40º e 44º, § 7º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
     "Aluguel por Temporada (Regras)": "Permitido. O proprietário deve garantir o cumprimento de todas as normas pelos ocupantes e se responsabiliza por todos os danos. O não cumprimento dos procedimentos de controle de acesso resulta em impedimento de entrada e multa (Art. 69º). [Penalidade: **Multa Grave** (5 contribuições)]",
 
     // CONVIVÊNCIA E MEIO AMBIENTE
     "Limite de Velocidade": "A velocidade máxima permitida nas vias públicas é de **20 Km/h** (Art. 26º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
+    "Vegetação de área comum": "Proibido modificações, cortes e plantios.(Art. 17º, 18º e 19º),
+    "Fachadas das casas": "É proibido colocar nas fachadas, jardins, janelas e portas dos imóveis, quaisquer anúncios próprios ou de terceiros, bem como exporem tapetes, roupas e artigos domésticos de qualquer natureza (Art. 8º)"., 
+    "Fogueiras": "A ninguém é permitido atear fogo em resíduos vegetais, orgânicos e de qualquer espécie, sob pena de aplicação de multa leve, além de arcar com as penalidades advindas do Poder Público fiscalizador do meio ambiente. (Art. 16º),
     "Horário de Silêncio (Barulho)": "É proibido produzir sons que perturbem o sossego das **23h00m às 08h00m**, exceto em datas previamente aprovadas (Art. 28º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
     "Regras de Animais Domésticos": "Permitida a criação. O condutor é responsável pelo recolhimento imediato das fezes durante passeios (Art. 29º e 31º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
     "Descarte de Entulho e Lixo": "É proibido o depósito de entulho, restos de construção ou madeiras nas ruas e terrenos vazios (Art. 15º). O lixo doméstico deve ser separado (seco/molhado) e acondicionado nas lixeiras (Art. 24º e 25º). [Penalidade: **Multa** (pena especificada no Art. 15º para entulho) / Advertência (para lixo doméstico)]",
@@ -20,7 +22,7 @@ const regulamentoData = {
 
     // MUDANÇAS E LOGÍSTICA DE OBRAS
     "Horário de Mudanças": "De Segunda a Sexta (08h00m às 17h00m) e Sábados (08h00m às 12h00m). Devem ser agendadas com 48 horas de antecedência (Art. 34º e 35º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
-    "Horário de Entrega de Materiais e Concreto": "Entrada de material é permitida das **08h00m às 16h00m** nos dias úteis. Caminhões de concreto têm tolerância até as 17h00m (Art. 48º, § 3º e 4º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
+    "Horário de Entrega de Materiais e Concreto": "Entrada de material é permitida das **08h00m às 16h00m** nos dias úteis. Caminhões de concreto têm tolerância de permanecer até as 17h00m (Art. 48º, § 3º e 4º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
 
     // CÓDIGO DE OBRAS: FLUXO E PARÂMETROS
     "Aprovação e Fluxo de Obras/Reformas": "Qualquer projeto/reforma deve ter aprovação prévia da Administração e obedecer ao Código de Obras (Art. 48º). O projeto deve ser aprovado pelo profissional do Residencial (com taxa), depois pela Prefeitura, e cópias aprovadas entregues à Administração (Itens 2, 3 e 4). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
@@ -33,9 +35,9 @@ const regulamentoData = {
     // CÓDIGO DE OBRAS: TRABALHADORES E CANTEIRO
     "Cadastro, Circulação e Pernoite de Funcionários": "Os funcionários devem ser **cadastrados previamente**. A circulação é limitada ao lote da obra, sendo **proibida a permanência (pernoite)** ou moradia no Residencial (Item 5 e 6.c / Art. 48º, § 1º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
     "Vestimenta de Funcionários": "É obrigatório que os trabalhadores estejam **devidamente trajados**. É **expressamente proibida a circulação sem camisa e descalços** no Residencial (Item 6.f). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
-    "Limpeza do Canteiro e Depósito de Materiais": "É proibido usar **lotes vizinhos como depósito** de materiais, estacionamento ou canteiro. O responsável deve fazer a **limpeza semanal** do passeio e das vias adjacentes (Item 6.g e 6.h). [Penalidade: **Multa Leve** (Art. 65º)]",
+    "Limpeza do Canteiro e Depósito de Materiais": "É proibido usar **lotes vizinhos como depósito** de materiais, estacionamento ou canteiro. O responsável deve fazer a **limpeza semanal** do passeio e das vias adjacentes toda a sexta feira (Item 6.g e 6.h). [Penalidade: **Multa Leve** (Art. 65º)]",
     "Instalações Provisórias na Obra": "É obrigatório providenciar **sanitário químico/provisório** no fundo do lote e dispor de contentores para água pluvial. As instalações devem ter o mínimo de impacto visual (Item 5 e 6.e). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
-    "Gerenciamento de Caçambas e Entulho": "O responsável deve solicitar troca da caçamba antes do limite. Proibido deixar pedaços de ferro espalhados em áreas de passeio (34ª). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
+    "Gerenciamento de Caçambas e Entulho": "O responsável deve solicitar troca da caçamba antes do limite. Proibido deixar pedaços de ferro, madeira ou qualquer tipo de residuo espalhados em áreas de passeio (34ª). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
 
     // PISCINAS E CALÇADAS
     "Regras sobre Piscinas e Drenagem": "As piscinas devem ser cercadas (segurança), mantidas limpas e com tratamento químico (evitar criadouro de mosquitos). Distância mínima de **1,5m** do muro do vizinho. O dreno de água deve usar mangote flexível até a boca de lobo pluvial (35ª e 36ª). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
