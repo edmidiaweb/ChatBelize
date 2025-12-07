@@ -288,8 +288,8 @@
 
     // CONVIVÊNCIA E MEIO AMBIENTE
     "Limite de Velocidade": "A velocidade máxima permitida nas vias públicas é de **20 Km/h** (Art. 26º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
-    "Vegetação de área comum": "Proibido modificações, cortes e plantios.(Art. 17º, 18º e 19º)", // Corrigido erro de vírgula aqui
-    "Fachadas das casas": "É proibido colocar nas fachadas, jardins, janelas e portas dos imóveis, quaisquer anúncios próprios ou de terceiros, bem como exporem tapetes, roupas e artigos domésticos de qualquer natureza (Art. 8º)", // Corrigido erro de ponto/vírgula aqui
+    "Vegetação de área comum": "Proibido modificações, cortes e plantios.(Art. 17º, 18º e 19º)", 
+    "Fachadas das casas": "É proibido colocar nas fachadas, jardins, janelas e portas dos imóveis, quaisquer anúncios próprios ou de terceiros, bem como exporem tapetes, roupas e artigos domésticos de qualquer natureza (Art. 8º)", 
     "Fogueiras": "A ninguém é permitido atear fogo em resíduos vegetais, orgânicos e de qualquer espécie, sob pena de aplicação de multa leve, além de arcar com as penalidades advindas do Poder Público fiscalizador do meio ambiente. (Art. 16º)",
     "Horário de Silêncio (Barulho)": "É proibido produzir sons que perturbem o sossego das **23h00m às 08h00m**, exceto em datas previamente aprovadas (Art. 28º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
     "Regras de Animais Domésticos": "Permitida a criação. O condutor é responsável pelo recolhimento imediato das fezes durante passeios (Art. 29º e 31º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
@@ -406,7 +406,7 @@
                             
                             if (topic.toLowerCase().includes(normalizedQuery) || topicContent.includes(normalizedQuery)) {
                                 response = regulamentoData[topic];
-                                break; // Adiciona o break para sair do loop assim que encontrar o primeiro resultado
+                                break; 
                             }
                         }
                     }
@@ -446,7 +446,7 @@
                 chatBody.innerHTML = ''; 
                 // Adiciona a mensagem inicial (garante que a função está no escopo)
                 addMessage("Olá! Sou o ChatBelize. Em que posso ajudar você com o Regulamento Interno? Escolha um tópico ou digite sua pergunta.", 'bot');
-                // Limpa o input e foca nele (Melhoria de Usabilidade)
+                // Limpa o input e foca nele
                 userInput.value = '';
                 userInput.focus();
             });
