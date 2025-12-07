@@ -275,51 +275,55 @@
     </div>
     
     <script>
-        const regulamentoData = {
-            // DISPOSIÇÕES GERAIS E OBRIGAÇÕES
-            "Obrigatoriedade Taxa Associativa": "Artigo 1º: Todos os usuários são obrigados a contribuir para as despesas comuns e para a taxa associativa mensal, bem como para o custeio de obras.",
-            "Deveres dos Usuários": "Artigo 3º: É dever de todos os USUÁRIOS prestigiar e acatar as deliberações da Assembleia Geral, Ordinária e Extraordinária.",
-            "Cópia do Regulamento em Contratos": "Artigo 4º: Uma cópia do Regulamento Interno deverá obrigatoriamente fazer parte integrante dos contratos de locação, comodatos ou vendas de unidades autônomas.",
-            "Respeito a Colaboradores": "Artigo 6º: Todos os USUÁRIOS têm o dever de tratar com respeito todos os colaboradores, prestadores de serviços do Residencial e vice-versa.",
-            "Funcionários": "Artigo 7⁰: Os empregados, fornecedores e prestadores de serviços contratados pelo Residencial estão exclusivamente a serviço deste, não podendo receber ordens de pessoas não encarregadas de representá-lo, nem serem chamados para a prestação de serviços particulares de qualquer natureza, ainda que eventual ou em horas de folga. Os empregados assim encontrados serão penalizados a critério da Administração, e o USUÁRIO advertido por escrito pela Diretoria Executiva da Associação que, na reincidência, será penalizado com aplicação de multa leve, por evento.",
-            
-            // ENTRADA, SAÍDA E SEGURANÇA
-            "Controle de Entrada e Saída": "Artigo 9º e 10º: Os portões permanecem fechados sob controle da Portaria. A entrada de veículos ou pessoas depende de cadastro, documentos e da comprobatória de sua condição (propriedade, locação, etc.).",
-            
 
-            // MEIO-AMBIENTE E LIXO
-            "Proibição de Descarte (Entulho)": "Artigo 15º: É proibido o depósito de entulho, restos de construção, madeiras ou qualquer outro material nas ruas e terrenos vazios, sob pena de multa. A caçamba localizada próximo a lixeira é destinada para restos de jardinagem.",
-            "Taxa de Roçada (Lotes Vazios)": "Artigo 20º: A manutenção e corte da vegetação de lotes vazios é executada pela Associação e cobrada mensalmente dos USUÁRIOS (Taxa Associativa de Roçada).",
-            "Coleta Seletiva (Separação do Lixo)": "Artigo 24º: Os moradores são responsáveis pelo lixo gerado, devendo acondicioná-lo em sacos plásticos e depositá-lo nas lixeiras do Residencial. O lixo deverá ser acondicionado em embalagem apropriada para os respectivos detritos e descartado na lixeira localizada próximo à Portaria de Serviço. Caso não obedeça à regra do lixo, o infrator será advertido e multado em multa leve por evento. 1º Os moradores deverão separar o lixo que produzirem, acondicionando-o em sacos plásticos distintos “secos” (metais, plástico, papel, vidros) e “molhados” (orgânico e rejeitos). 2º O lixo seco do tipo latas, caixas de leite e demais recipientes que contenham resíduos alimentícios deverão ser lavados para evitar mau cheiro e acúmulo de insetos. 3º Esse material será armazenado temporariamente no abrigo para lixo existente no Residencial e será vendido e/ou doado. Em caso de venda, o dinheiro arrecadado será revertido para a própria Associação.",
-            "Proibição de Caça/Captura de Animais Silvestres": "Artigo 23º: É proibida a caça, captura ou transporte de pássaros e animais silvestres na área do Residencial.",
+            const regulamentoData = {
+    // DISPOSIÇÕES GERAIS E PENALIDADES
+    "Tipos de Penalidades e Valores": "A violação do Regulamento sujeita a: 1. Advertência Verbal; 2. Notificação formal; 3. Aplicação de Multa (leve, média e grave). Os valores são: Leve (1 contribuição mensal base lote 300m²), Média (3 contribuições), Grave (5 contribuições).",
+    "Obrigatoriedade da Taxa Associativa": "Todos os USUÁRIOS são obrigados a contribuir para despesas comuns, taxa associativa e custeio de obras. Isso inclui a taxa de roçada para terrenos vagos (Art. 1º e 2º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
+    "Deveres Gerais dos Usuários": "É dever cumprir e fazer cumprir as determinações, acatar deliberações de Assembleia e tratar colaboradores e prestadores de serviços com respeito (Art. 3º e 6º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
 
-            // SISTEMA VIÁRIO E REGRAS DE CONVIVÊNCIA
-            "Limites de Velocidade": "Artigo 26º: É proibido usar ou bloquear as vias públicas para fins particulares, inclusive de forma momentânea. A velocidade máxima é de 20 km/h. Os veículos devem ser estacionados dentro das vagas da residência; se houver mais carros que vagas, devem ficar em frente ao Bosque do Residencial. Terrenos vazios não podem ser usados como estacionamento. O descumprimento da velocidade gera multa grave, e estacionamento irregular ou uso indevido das vias gera multa leve, por veículo e por dia.",
-            "Horário de Barulho": "Artigo 28º: É vedado produzir sons que causem perturbação ao sossego, das **23h00m às 08h00m**, exceto em datas previamente aprovadas.",
-            "Animais Domésticos": "Artigo 31º:  É permitido o convívio com animais domésticos, desde que observadas as seguintes regras: Os animais deverão ser mantidos dentro das unidades autônomas, sendo proibida a sua permanência nas áreas comuns, exceto para trânsito de entrada e saída. Os animais deverão ser conduzidos por seus proprietários, utilizando coleira e guia, e, no caso de cães de grande porte ou raças consideradas perigosas, deverão usar focinheira. É de responsabilidade do proprietário a coleta e o descarte adequado das fezes de seus animais nas áreas comuns. O não cumprimento desta regra sujeitará o infrator à multa leve. É proibido o abandono de animais no Residencial.",
-            
-            
-            "Armas e Fogos de Artifício": "Artigo 32º e 33º: É vedado o uso de armas de fogo e proibido o ingresso/uso de explosivos/fogos de artifício (exceto pirotecnia para uso doméstico).",
-            
-            // MUDANÇAS E OBRAS
-            "Horário de Mudanças": "Artigo 34º e 35º: As mudanças só podem ser realizadas de Segunda a Sexta (08h00m às 17h00m) e Sábados (08h00m às 12h00m). Devem ser agendadas com 48 horas de antecedência.",
-            "Obras e Reformas (Aprovação)": "Artigo 48º: Qualquer projeto, obra ou reforma deve obedecer ao Código de Obras e ter aprovação prévia da Administração.",
-            "Horário de Entrega de Materiais de Construção": "Artigo 48º, § 3º: A entrada de material de construção é permitida das **08h00m às 16h00m** nos dias úteis pela portaria de serviços.",
-            "Horário de Caminhões de Concreto": "Artigo 48º, § 4º: Caminhões que transportam concreto serão permitidos até as 17h00m.",
-            "Proibição de Permanência de Trabalhadores": "Artigo 48º, § 1º: Não é permitida a permanência de trabalhadores de obras ou reforma no Residencial após às 17:00hs ou pernoite no local.",
+    // ACESSO E SEGURANÇA
+    "Controle de Acesso (Geral)": "Os portões permanecem fechados sob controle da Portaria. A entrada de veículos ou pessoas depende de cadastro e comprovação de sua condição (Art. 9º e 10º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
+    "Aluguel por Temporada (Regras)": "Permitido. O proprietário deve garantir o cumprimento de todas as normas pelos ocupantes e se responsabiliza por todos os danos. O não cumprimento dos procedimentos de controle de acesso resulta em impedimento de entrada e multa (Art. 69º). [Penalidade: **Multa Grave** (5 contribuições)]",
 
-            // ÁREAS DE LAZER E CONVIVÊNCIA
-            "Horário Centro de Convivência": "Artigo 52º, § 1º: O horário de utilização do Centro de Convivência (quadras esportivas e quiosques) será das **07h00m às 23h00m**.",
-            "Agendamento de Quadras Esportivas": "Artigo 56º, § 1º: A utilização das quadras esportivas aos sábados, domingos, feriados e outros dias de maior movimento, deverá ser agendada na Portaria.",
-            "Horário do Playground": "Artigo 59º: O horário de funcionamento do Playground é das **08h00m às 22h00m**.",
+    // CONVIVÊNCIA E MEIO AMBIENTE
+    "Limite de Velocidade": "A velocidade máxima permitida nas vias públicas é de **20 Km/h** (Art. 26º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
+    "Vegetação de área comum": "Proibido modificações, cortes e plantios.(Art. 17º, 18º e 19º),
+    "Fachadas das casas": "É proibido colocar nas fachadas, jardins, janelas e portas dos imóveis, quaisquer anúncios próprios ou de terceiros, bem como exporem tapetes, roupas e artigos domésticos de qualquer natureza (Art. 8º)"., 
+    "Fogueiras": "A ninguém é permitido atear fogo em resíduos vegetais, orgânicos e de qualquer espécie, sob pena de aplicação de multa leve, além de arcar com as penalidades advindas do Poder Público fiscalizador do meio ambiente. (Art. 16º),
+    "Horário de Silêncio (Barulho)": "É proibido produzir sons que perturbem o sossego das **23h00m às 08h00m**, exceto em datas previamente aprovadas (Art. 28º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
+    "Regras de Animais Domésticos": "Permitida a criação. O condutor é responsável pelo recolhimento imediato das fezes durante passeios (Art. 29º e 31º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
+    "Descarte de Entulho e Lixo": "É proibido o depósito de entulho, restos de construção ou madeiras nas ruas e terrenos vazios (Art. 15º). O lixo doméstico deve ser separado (seco/molhado) e acondicionado nas lixeiras (Art. 24º e 25º). [Penalidade: **Multa** (pena especificada no Art. 15º para entulho) / Advertência (para lixo doméstico)]",
+    "Uso de Armas e Fogos": "É vedado o uso de armas de fogo. Proibido o ingresso/uso de explosivos/fogos de artifício (exceto pirotecnia doméstica) (Art. 32º e 33º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
 
-            // PENALIDADES
-            "Tipos de Penalidades": "Artigo 64º: A violação do Regulamento sujeita a penalidades: 1. Advertência Verbal; 2. Notificação formal; 3. Aplicação de Multa (leve, média e grave).",
-            "Valores das Multas": "Artigo 65º: As multas leves são de 1 contribuição mensal base lote 300m², médias de 3 contribuições e graves de 5 contribuições.",
+    // MUDANÇAS E LOGÍSTICA DE OBRAS
+    "Horário de Mudanças": "De Segunda a Sexta (08h00m às 17h00m) e Sábados (08h00m às 12h00m). Devem ser agendadas com 48 horas de antecedência (Art. 34º e 35º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
+    "Horário de Entrega de Materiais e Concreto": "Entrada de material é permitida das **08h00m às 16h00m** nos dias úteis. Caminhões de concreto têm tolerância de permanecer até as 17h00m (Art. 48º, § 3º e 4º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
 
-            // DISPOSIÇÕES FINAIS
-            "Alteração do Regulamento": "Artigo 70º: Este Regulamento Interno somente poderá ser alterado através de Assembleia Geral."
-        };
+    // CÓDIGO DE OBRAS: FLUXO E PARÂMETROS
+    "Aprovação e Fluxo de Obras/Reformas": "Qualquer projeto/reforma deve ter aprovação prévia da Administração e obedecer ao Código de Obras (Art. 48º). O projeto deve ser aprovado pelo profissional do Residencial (com taxa), depois pela Prefeitura, e cópias aprovadas entregues à Administração (Itens 2, 3 e 4). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
+    "Área Mínima e Parâmetros Construtivos": "Mínimo de **140,00m²** (sem edículas/terraços). Máximo de **dois pavimentos** e altura máxima de **10,00m** do meio fio. O nível da construção deve estar entre **0,60m e 0,80m** acima do meio da rua (Art. 7º, 9º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
+    "Recuos Obrigatórios": "Para lotes de testada $\ge 12,00m$: Frontal: **5,00m**; Laterais: **2,00m**; Fundos: **4,00m** (Art. 15º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
+    "Muros (Proibição Frontal e Altura)": "**Proibido** muro, cerca ou gradil na frente do lote. Muros laterais/fundo (obrigatórios no início da obra) devem ter altura máxima de **2,70m** e mínima de **1,80m** (Art. 14º / Item 5). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
+    "Regras de Edículas": "Devem ser térreas (pé direito máx. 3,50m), sem dormitórios. Projeção horizontal máx. de **12%** da área do terreno, e afastamento mínimo de **2,00m** da construção principal (Art. 10º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
+    "Ligações Externas (Cabos)": "As ligações externas (energia elétrica, telefone, TV a cabo ou similares) serão **obrigatoriamente subterrâneas** (Art. 12º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
+
+    // CÓDIGO DE OBRAS: TRABALHADORES E CANTEIRO
+    "Cadastro, Circulação e Pernoite de Funcionários": "Os funcionários devem ser **cadastrados previamente**. A circulação é limitada ao lote da obra, sendo **proibida a permanência (pernoite)** ou moradia no Residencial (Item 5 e 6.c / Art. 48º, § 1º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
+    "Vestimenta de Funcionários": "É obrigatório que os trabalhadores estejam **devidamente trajados**. É **expressamente proibida a circulação sem camisa e descalços** no Residencial (Item 6.f). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
+    "Limpeza do Canteiro e Depósito de Materiais": "É proibido usar **lotes vizinhos como depósito** de materiais, estacionamento ou canteiro. O responsável deve fazer a **limpeza semanal** do passeio e das vias adjacentes toda a sexta feira (Item 6.g e 6.h). [Penalidade: **Multa Leve** (Art. 65º)]",
+    "Instalações Provisórias na Obra": "É obrigatório providenciar **sanitário químico/provisório** no fundo do lote e dispor de contentores para água pluvial. As instalações devem ter o mínimo de impacto visual (Item 5 e 6.e). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
+    "Gerenciamento de Caçambas e Entulho": "O responsável deve solicitar troca da caçamba antes do limite. Proibido deixar pedaços de ferro, madeira ou qualquer tipo de residuo espalhados em áreas de passeio (34ª). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
+
+    // PISCINAS E CALÇADAS
+    "Regras sobre Piscinas e Drenagem": "As piscinas devem ser cercadas (segurança), mantidas limpas e com tratamento químico (evitar criadouro de mosquitos). Distância mínima de **1,5m** do muro do vizinho. O dreno de água deve usar mangote flexível até a boca de lobo pluvial (35ª e 36ª). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
+    "Calçadas (Passeio Público)": "Obrigatória a construção de calçada de pedestres mínima com **1,20m** de largura, com pisos antiderrapantes e inclinação máxima de 3% (Art. 13º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
+
+    // ÁREAS DE LAZER E CONVIVÊNCIA
+    "Horário Centro de Convivência": "O horário de utilização do Centro de Convivência (quadras esportivas e quiosques) é das **07h00m às 23h00m** (Art. 52º, § 1º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
+    "Agendamento de Quadras Esportivas": "A utilização das quadras aos sábados, domingos, feriados e outros dias de maior movimento, deverá ser agendada na Portaria (Art. 56º, § 1º). [Penalidade: Advertência/Multa Geral (Art. 64º)]",
+    "Horário do Playground": "O horário de funcionamento do Playground é das **08h00m às 22h00m** (Art. 59º). [Penalidade: Advertência/Multa Geral (Art. 64º)]"
+};
 
         document.addEventListener('DOMContentLoaded', () => {
             const chatBody = document.getElementById('chat-body');
